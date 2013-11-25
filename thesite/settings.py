@@ -4,7 +4,7 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
+    ('qluo1', 'qluo1@qidata.com'),
 )
 
 MANAGERS = ADMINS
@@ -156,3 +156,9 @@ LOGGING = {
         },
     }
 }
+
+# local setting
+try:
+    from local_settings import *
+except ImportError:
+    pass
