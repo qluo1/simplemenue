@@ -1,3 +1,8 @@
+bin
+lib
+include
+local
+dist
 *.log
 *.pot
 *.pyc
