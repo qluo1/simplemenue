@@ -9,4 +9,5 @@ pipeline
 *.pot
 *.pyc
 *.whl
+www/*
 dev.db

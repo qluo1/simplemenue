@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% load compressed %}
+{% load menu %}{% generate_menu %}
 <html lang="en">
   <head>
     <meta content="text/html">
@@ -8,11 +9,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-
     <link rel="shortcut icon" href="{{STATIC_URL}}ico/favicon.png">
 
     <title>Justified Nav Template for Bootstrap</title>
-    
+   
     <!-- Bootstrap core CSS -->
     {% compressed_css 'css' %}
 
@@ -22,28 +22,20 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
   </head>
-
   <body>
-
     <div class="container">
 
       <div class="masthead">
         <h3 class="text-muted">Project name</h3>
         <ul class="nav nav-justified">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#">Projects</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Downloads</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </div>
+          {% with menu=menus.main %}
+            {% for item in menu %}
+            <li class="{% if item.selected %} active {% endif %}"><a href="{{ item.url }}">{% if item.icon %}<i class="icon-{{ item.icon }} icon-white"></i>&nbsp;{% endif %}{{ item.title }}</a>
+            </li>
+          {% endfor %}
 
-      <!-- Jumbotron -->
-      <div class="jumbotron">
-        <h1>Marketing stuff!</h1>
-        <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet.</p>
-        <p><a class="btn btn-lg btn-success" href="#" role="button">Get started today</a></p>
+          {% endwith %}
+        </ul>
       </div>
 
       <div id="content">
