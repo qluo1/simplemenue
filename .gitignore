@@ -2,8 +2,11 @@ bin
 lib
 include
 local
-dist
+debug_toolbar
+concurrent
+pipeline
 *.log
 *.pot
 *.pyc
-local_settings.py
+*.whl
+dev.db
