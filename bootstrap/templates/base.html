@@ -27,7 +27,7 @@
 
       <div class="masthead">
         <h3 class="text-muted">Project name</h3>
-        <ul class="nav nav-justified">
+        <ul class="nav nav-pills nav-justified">
           {% with menu=menus.main %}
             {% for item in menu %}
             <li class="{% if item.selected %} active {% endif %}"><a href="{{ item.url }}">{% if item.icon %}<i class="icon-{{ item.icon }} icon-white"></i>&nbsp;{% endif %}{{ item.title }}</a>

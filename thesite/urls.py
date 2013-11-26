@@ -19,4 +19,8 @@ urlpatterns = patterns('',
     url(r'^services$', 'bootstrap.views.services',name='Services'),
     url(r'^contact$', 'bootstrap.views.about',name='Contact'),
     url(r'^about$', 'bootstrap.views.about',name='About'),
+    ## django auth
+    url(r'^accounts/login/$', 'django.contrib.auth.views.login',name='Login'),
+    url(r'^accounts/logout/$', 'django.contrib.auth.views.logout',name='Logout'),
+    url(r'^accounts/profile/$', 'bootstrap.views.profile',name='Profile'),
 )

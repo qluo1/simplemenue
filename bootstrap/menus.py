@@ -26,3 +26,16 @@ Menu.add_item("main", MenuItem("About",
 
 Menu.add_item("main", MenuItem("Contact",
                                reverse("Contact")))
+
+# this item will be shown to users who are not logged in
+Menu.add_item("main", MenuItem("Login",
+                               reverse('Login'),
+                               check=lambda request: not request.user.is_authenticated()))
+
+Menu.add_item("main", MenuItem("Profile",
+                               reverse('Profile'),
+                               check=lambda request: request.user.is_authenticated()))
+
+Menu.add_item("main", MenuItem("Logout",
+                               reverse('Logout'),
+                               check=lambda request: request.user.is_authenticated()))

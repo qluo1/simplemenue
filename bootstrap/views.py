@@ -27,3 +27,9 @@ def contact(request):
 	""" """
 	return render_to_response("contact.html",
 		context_instance=RequestContext(request))
+
+@login_required
+def profile(request):
+	""" """
+	return render_to_response("registration/profile.html",
+		context_instance=RequestContext(request))

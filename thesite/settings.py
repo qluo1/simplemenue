@@ -201,7 +201,6 @@ PIPELINE_CSS = {
     'css': {
         'source_filenames': (
           'bootstrap/css/bootstrap.css',
-          'bootstrap/css/justified-nav.css',
         ),
         'output_filename': 'css/bootstrap.css',
         'extra_context': {
